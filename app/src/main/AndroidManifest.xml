@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OzbekLand">
+
+        <!-- Главный экран приложения (после ввода имени и возраста) -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.OzbekLand" />
+
+        <!-- Стартовый экран: ввод имени и возраста -->
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.OzbekLand">
+
+            <!-- Делает WelcomeActivity первой запускаемой Activity -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Если хочешь оставить MainActivity как черновик/тест -->
+        <!-- Можно вообще удалить этот блок, если MainActivity не нужен -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.OzbekLand" />
+
+        <activity
+            android:name=".QuizActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OzbekLand" />
+
+        <activity
+            android:name=".QuestionsListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OzbekLand" />
+
+
+    </application>
+
+</manifest>
