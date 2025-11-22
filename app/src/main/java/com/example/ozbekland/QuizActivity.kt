@@ -47,7 +47,9 @@ fun QuizScreen(
     onQuizFinished: () -> Unit,
     onGoHome: () -> Unit
 ) {
-    val questions = QuizRepository.questions
+    val questions = remember {
+        QuizRepository.questions.shuffled()   // 🔁 перемешиваем один раз
+    }
     var currentIndex by remember { mutableStateOf(0) }
 
     if (currentIndex >= questions.size) {
@@ -151,12 +153,27 @@ fun InputQuestionView(
                 modifier = Modifier.padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+
+                // 🖼️ КАРТИНКА НАД ВОПРОСОМ, если есть imageResId
+                question.imageResId?.let { resId ->
+                    Image(
+                        painter = painterResource(id = resId),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(140.dp),
+                        contentScale = ContentScale.Crop
+                    )
+                    Spacer(Modifier.height(12.dp))
+                }
+
                 Text(
                     text = question.text,
                     fontSize = 22.sp,
                     color = Color(0xFF064663),
                     lineHeight = 28.sp
                 )
+
                 Spacer(Modifier.height(16.dp))
 
                 OutlinedTextField(
@@ -244,6 +261,21 @@ fun ChoiceQuestionView(
                 modifier = Modifier.padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+
+                // 🖼 картинка над вопросом (если есть)
+                question.imageResId?.let { resId ->
+                    Image(
+                        painter = painterResource(id = resId),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(140.dp),
+                        contentScale = ContentScale.Crop
+                    )
+                    Spacer(Modifier.height(12.dp))
+                }
+
+                // текст вопроса
                 Text(
                     text = question.text,
                     fontSize = 22.sp,
@@ -253,7 +285,10 @@ fun ChoiceQuestionView(
 
                 Spacer(Modifier.height(16.dp))
 
+                // 🔹 варианты ответов
                 question.options.forEachIndexed { index, option ->
+
+                    // можно чуть-чуть рандомизировать цвета по индексу
                     val color = when (index % 4) {
                         0 -> Color(0xFF70C3FF)
                         1 -> Color(0xFFFFA45B)
@@ -275,17 +310,21 @@ fun ChoiceQuestionView(
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(52.dp)
+                            .padding(vertical = 6.dp)
                     ) {
-                        Text(text = option, fontSize = 18.sp)
+                        Text(
+                            text = option,
+                            fontSize = 18.sp
+                        )
                     }
-
-                    Spacer(Modifier.height(8.dp))
                 }
             }
         }
 
+        // толкатель, чтобы кнопка ушла вниз
         Spacer(modifier = Modifier.weight(1f))
 
+        // нижняя кнопка Bosh sahifa
         Button(
             onClick = onGoHome,
             colors = ButtonDefaults.buttonColors(

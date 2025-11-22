@@ -3,21 +3,25 @@ package com.example.ozbekland
 // Тип вопроса
 sealed class Question(
     val id: Int,
-    val text: String
+    val text: String,
+    val imageResId: Int? = null      // <-- ресурс картинки (может быть null)
 ) {
     class InputQuestion(
         id: Int,
         text: String,
-        val correctAnswer: String
-    ) : Question(id, text)
+        val correctAnswer: String,
+        imageResId: Int? = null
+    ) : Question(id, text, imageResId)
 
     class ChoiceQuestion(
         id: Int,
         text: String,
         val options: List<String>,
-        val correctAnswer: String
-    ) : Question(id, text)
+        val correctAnswer: String,
+        imageResId: Int? = null
+    ) : Question(id, text, imageResId)
 }
+
 
 // Тут храним все вопросы
 object QuizRepository {
@@ -53,7 +57,7 @@ object QuizRepository {
         Question.InputQuestion(
             id = 6,
             text = "Qaysi harf ikkita tovush ifodalaydi?",
-            correctAnswer = "e"
+            correctAnswer = "j"
         ),
         Question.InputQuestion(
             id = 7,
@@ -519,6 +523,48 @@ object QuizRepository {
             text = "“O‘qituvchi” so‘zida nechta undosh tovush bor?",
             options = listOf("3", "4", "5"),
             correctAnswer = "5"
+        ),
+        Question.InputQuestion(
+            id = 89,
+            text = "Rasmda tutundan foydalanilgan. Rasm nomini yozing.",
+            correctAnswer = "tutun",
+            imageResId = R.drawable.tutun
+        ),
+        Question.InputQuestion(
+            id = 90,
+            text = "Rasmda yoz fasli tasvirlangan. Rasm nomini yozing.",
+            correctAnswer = "yoz fasli",
+            imageResId = R.drawable.yoz
+        ),
+        Question.InputQuestion(
+            id = 91,
+            text = "Rasmda daraxt barglari to‘kilib tushayotgani tasvirlangan. Bu qanday holat?",
+            correctAnswer = "hazonrezgi",
+            imageResId = R.drawable.hazonrezgi
+        ),
+        Question.InputQuestion(
+            id = 92,
+            text = "Rasmda bolalar savodxonlik bayramini nishonlamoqda. Rasm nomini yozing.",
+            correctAnswer = "savodxonlik bayrami",
+            imageResId = R.drawable.maktab
+        ),
+        Question.InputQuestion(
+            id = 93,
+            text = "Rasmda sayohat holati tasvirlangan. Rasm nomini yozing.",
+            correctAnswer = "sayohat",
+            imageResId = R.drawable.sayoxat
+        ),
+        Question.InputQuestion(
+            id = 94,
+            text = "Rasmda sog‘lom turmush tarzi aks ettirilgan. Rasm nomini yozing.",
+            correctAnswer = "sog'лом turmush tarzi",
+            imageResId = R.drawable.ovqat
+        ),
+        Question.InputQuestion(
+            id = 95,
+            text = "Rasmda baxtli oila tasvirlangan. Rasm nomini yozing.",
+            correctAnswer = "baxtli oila",
+            imageResId = R.drawable.oila
         )
 
         // Агар хоҳласанг, 4-синф тестлар блокини ҳам шу тарзда давом эттирамиз
