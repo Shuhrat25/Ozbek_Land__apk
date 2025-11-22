@@ -23,6 +23,7 @@ sealed class Question(
 }
 
 
+
 // Тут храним все вопросы
 object QuizRepository {
 
