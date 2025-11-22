@@ -527,13 +527,13 @@ object QuizRepository {
         ),
         Question.InputQuestion(
             id = 89,
-            text = "Rasmda tutundan foydalanilgan. Rasm nomini yozing.",
-            correctAnswer = "tutun",
+            text = "Rasmni nomlang.",
+            correctAnswer = "Zaharli tutun",
             imageResId = R.drawable.tutun
         ),
         Question.InputQuestion(
             id = 90,
-            text = "Rasmda yoz fasli tasvirlangan. Rasm nomini yozing.",
+            text = "Rasmni nomlang.",
             correctAnswer = "yoz fasli",
             imageResId = R.drawable.yoz
         ),
@@ -545,25 +545,25 @@ object QuizRepository {
         ),
         Question.InputQuestion(
             id = 92,
-            text = "Rasmda bolalar savodxonlik bayramini nishonlamoqda. Rasm nomini yozing.",
+            text = "Rasmni nomlang.",
             correctAnswer = "savodxonlik bayrami",
             imageResId = R.drawable.maktab
         ),
         Question.InputQuestion(
             id = 93,
-            text = "Rasmda sayohat holati tasvirlangan. Rasm nomini yozing.",
-            correctAnswer = "sayohat",
+            text = "Rasmni nomlang.",
+            correctAnswer = "sayoxat",
             imageResId = R.drawable.sayoxat
         ),
         Question.InputQuestion(
             id = 94,
-            text = "Rasmda sog‘lom turmush tarzi aks ettirilgan. Rasm nomini yozing.",
+            text = "Rasmni nomlang.",
             correctAnswer = "sog'лом turmush tarzi",
             imageResId = R.drawable.ovqat
         ),
         Question.InputQuestion(
             id = 95,
-            text = "Rasmda baxtli oila tasvirlangan. Rasm nomini yozing.",
+            text = "Rasmni nomlang.",
             correctAnswer = "baxtli oila",
             imageResId = R.drawable.oila
         )
