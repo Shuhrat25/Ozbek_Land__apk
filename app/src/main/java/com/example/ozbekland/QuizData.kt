@@ -214,27 +214,27 @@ object QuizRepository {
         // 5-qism: Shakldosh so‘zlar
         Question.InputQuestion(
             id = 35,
-            text = "Shakldosh so‘z: “tut” (ushlamoq / tut daraxti). So‘zni yozing.",
+            text = ",Tut' (meva) so'zining shakldosh juftlarini toping",
             correctAnswer = "tut"
         ),
         Question.InputQuestion(
             id = 36,
-            text = "Shakldosh so‘z: “chop” (yugurmoq / kesmoq). So‘zni yozing.",
+            text = ",Chop' ( yugurmoq) so'zining shakldosh juftlarini toping",
             correctAnswer = "chop"
         ),
         Question.InputQuestion(
             id = 37,
-            text = "Shakldosh so‘z: “chang” (iflos / cholg‘u asbobi). So‘zni yozing.",
+            text = ",Chang' (cholg'u asbobi)  so'zining shakldosh juftlarini toping.",
             correctAnswer = "chang"
         ),
         Question.InputQuestion(
             id = 38,
-            text = "Shakldosh so‘z: “uch” (uchmoq / 3 raqami). So‘zni yozing.",
+            text = "Uch (uchmoq) so'zining shakldosh juftlarini toping",
             correctAnswer = "uch"
         ),
         Question.InputQuestion(
             id = 39,
-            text = "Shakldosh so‘z: “yutmoq” (ichish / g‘olib bo‘lish). So‘zni yozing.",
+            text = ",Yutmoq' (yemoq) so'zining shakldosh juftlarini toping",
             correctAnswer = "yutmoq"
         ),
 
